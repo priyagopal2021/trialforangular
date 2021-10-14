@@ -1,0 +1,74 @@
+﻿<button (click)="toggleShow()" type="button" class="btn btn-primary">Add Book</button>
+
+<div class = "card">
+    <div *ngIf="isShown" class="row container-fluid"  id="divshow" >
+    <form [formGroup]="userForm" novalidate ng-hide="myForm.$submitted" ng-submit="submit()">
+       <div class = "mt-5 ">
+        <div class = "form-row">
+            <div class ="col-md-12">
+                <div class="form-group mt-4">
+                    <label> Book Name</label>
+                </div>
+                <div class ="form-row" style="margin: top -10px;">
+                    <div class = "col">
+                        <input type = "text" formControlName = "bookname" class="form-control" placeholder="bookname">
+                    </div>
+                </div>
+            </div>
+            <div class ="col-md-12">
+                <div class="form-group mt-4">
+                    <label>Author Name</label>
+                </div>
+                <div class ="form-row "style="margin: top -10px;">
+                    <div class = "col">
+                        <input type = "text" formControlName = "authorname" class="form-control" placeholder="authorname">
+                    </div>
+                </div>
+            </div>
+                <div class ="col-md-12">
+                    <div class="form-group mt-4">
+                        <label>Book Review </label>
+                    </div>
+                <div class ="form-row"style="margin: top -10px;">
+                    <div class = "col">
+                       <input type = "text" formControlName = "review" class="form-control" placeholder="review">
+                    </div>
+                </div>
+            </div>
+                <div class = "form-row mt-4">
+                    <div class = "col-md-6">
+                        <button type ="button" class = "btn btn-primary" (click)="addItem()">Submit</button>&nbsp;
+                   </div>
+                   <div class = "col-md-6">
+                   <button type ="button" class = "btn btn-primary"(click)="reset()">Cancel</button>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+
+<div class ="col-md-20 mt-4 md-4">
+
+          
+    <table class = "table table-bordered">
+        <thead>
+            <tr>
+           
+                <th>Book Name</th>
+                <th>Author Name</th>
+                <th>Book Review</th>
+            </tr>
+        </thead>
+    <tbody>
+        
+        <tr *ngFor="let review of reviews">
+            <td><span>{{review.bookname}}</span></td>
+            <td><span>{{review.authorname}}</span></td>
+            <td><span>{{review.review}}</span></td>
+    </tbody>
+    </table>
+</div>
+<button (click)="close()" type="button" class="btn btn-primary"> Close
+</button>
