@@ -7,7 +7,8 @@
     },
     "scripts": {
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --open"
+    "start": "node  server.js",
+    "postinstall":"ng build --prod"
     },
     "license": "MIT",
     "dependencies": {
@@ -24,7 +25,8 @@
         "g": "^2.0.1",
         "mongoose": "^6.0.8",
         "rxjs": "^6.6.7",
-        "zone.js": "^0.9.1"
+        "zone.js": "^0.9.1",
+        "@angular/compiler-cli": "^12.2.10"
     },
     "devDependencies": {
         "@types/node": "^12.20.27",
